@@ -20,12 +20,26 @@ class Model {
     private var initialNumTries: Int = -1
     
     private var firstCardSelected = false
+    
+    //keeps track of the values and coordinates of the cards that are currently selected by the user
     private var selectedCards: (first:  (value: Int, coord: (r: Int, c: Int)),
         second: (value: Int, coord: (r: Int, c: Int))) = ((0,(-1,-1)),(0,(-1,-1)))
     
-    private var cards: [[Int]] = []
+    //keeps track of the values and coordinates of the cards that the user previously mismatched
+    //this is done so that the main thread calling this class's functions can show both cards selected by the
+    //user before turning them back over by calling model.resetMismatchedCards()
+    private var priorPair: (first:  (value: Int, coord: (r: Int, c: Int)),
+        second: (value: Int, coord: (r: Int, c: Int))) = ((0,(-1,-1)),(0,(-1,-1)))
+    
+    //an array of failed match attempts the player has previously made
+    //every time the player tries to make another match this array will be checked
+    //to ensure that the player doesn't make the same mistake twice
+    private var priorFailedPairs: [(first:  (value: Int, coord: (r: Int, c: Int)), second: (value: Int, coord: (r: Int, c: Int)))] = []
+    
+    private var cards: [[Int]] = [] //a matrix that holds the value of each card being
     private var shownCards: [[Int]] = [] //a masking matrix to hide the values of the cards that aren't currently shown
     
+    //used to indicate a change in state of the model after a card has been selected
     enum CardSelectReturnValue {
         case firstCardSelected
         case matchFound
@@ -51,6 +65,7 @@ class Model {
         
     }
     
+    //reshuffles all of the cards in the cards array and resets the state of the model
     public func reset() {
         
         numTries = initialNumTries
@@ -84,6 +99,9 @@ class Model {
         }
     }
     
+    //selects the card indicated by the coordinates passed in by the controller
+    //the model's state will be updated as needed and a CardSelectReturnValue enum will be
+    //returned to indicate the new state of the model
     public func selectCard (xCoord column: Int, yCoord row: Int) -> CardSelectReturnValue {
         
         //return that the card is unselectable by default
@@ -111,6 +129,23 @@ class Model {
                 toReturn = CardSelectReturnValue.firstCardDeselected
             }
             else { //a different card has been selected this time
+                
+                //make sure the user doesn't try to make a pair that they have already tried in the past
+                for pair in priorFailedPairs {
+                    if pair.first.coord.r == row && pair.first.coord.c == column {
+                        if pair.second.coord.r == selectedCards.first.coord.r && pair.second.coord.c == selectedCards.first.coord.c {
+                            firstCardSelected = true
+                            return CardSelectReturnValue.unselectable
+                        }
+                    }
+                    if pair.first.coord.r == selectedCards.first.coord.r && pair.first.coord.c == selectedCards.first.coord.c {
+                        if pair.second.coord.r == row && pair.second.coord.c == column {
+                            firstCardSelected = true
+                            return CardSelectReturnValue.unselectable
+                        }
+                    }
+                }
+                
                 selectedCards.second.value = cards[row][column]
                 if selectedCards.first.value == selectedCards.second.value { //a match was found
                     shownCards[row][column] = 1
@@ -119,8 +154,24 @@ class Model {
                 }
                 else { //the two cards selected did not match
                     numTries = numTries - 1
-                    shownCards[row][column] = 0
-                    shownCards[selectedCards.first.coord.r][selectedCards.first.coord.c] = 0
+                    
+                    var failedPair: (first:  (value: Int, coord: (r: Int, c: Int)),
+                        second: (value: Int, coord: (r: Int, c: Int))) = ((0,(-1,-1)),(0,(-1,-1)))
+                    //save the pair of cards that the user unsuccessfully tried to match
+                    failedPair.first.value = selectedCards.first.value
+                    failedPair.first.coord.r = selectedCards.first.coord.r
+                    failedPair.first.coord.c = selectedCards.first.coord.c
+                    failedPair.second.value = cards[row][column]
+                    failedPair.second.coord.r = row
+                    failedPair.second.coord.c = column
+                    priorFailedPairs.append(failedPair)
+                    
+                    //show the two cards selected and remember their coordinates in priorPair
+                    shownCards[row][column] = 1
+                    shownCards[selectedCards.first.coord.r][selectedCards.first.coord.c] = 1
+                    priorPair.first = (selectedCards.first.value,(selectedCards.first.coord.r,selectedCards.first.coord.c))
+                    priorPair.second = (cards[row][column],(row,column))
+                    
                     toReturn = CardSelectReturnValue.matchNotFound
                     
                 }
@@ -130,6 +181,16 @@ class Model {
         return toReturn
     }
     
+    //hides the two cards that the user unsuccessfully tried to match
+    public func resetMismatchedCards() {
+        if priorPair.first.coord.r >= 0 && priorPair.first.coord.c >= 0 && priorPair.second.coord.r >= 0 && priorPair.second.coord.c >= 0 {     
+            shownCards[priorPair.first.coord.r][priorPair.first.coord.c]   = 0
+            shownCards[priorPair.second.coord.r][priorPair.second.coord.c] = 0
+        }
+        priorPair = ((0,(-1,-1)),(0,(-1,-1)))
+    }
+    
+    //indicates when the game has been lost
     public func isDead() -> Bool {
         if numTries < 0 {
             return true
@@ -160,6 +221,7 @@ class Model {
         return cards[row][column]
     }
     
+    //returns a copy of the cards array
     public func getCardMap() -> [[Int]] {
         
         //create a copy of cards and return it

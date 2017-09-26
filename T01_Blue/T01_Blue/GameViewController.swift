@@ -16,6 +16,7 @@ class GameViewController: UIViewController {
     
     let DEBUG = true
     
+    //create and instance of the model that will keep track of the cards, number of missed pairs, etc
     let model = Model.init(numCardsWidth: 3, numCardsHeight: 4, numTries: 6)
     
     //row 0 of cards
@@ -45,6 +46,8 @@ class GameViewController: UIViewController {
     
     var health: [[(id: String, image: UIImageView)]] = []
     
+    var timerCounter = 0
+    
     //this even will fire anytime a card is tapped
     @objc func cardTapped(sender: UITapGestureRecognizer) {
         if let image = sender.view as? UIImageView {
@@ -57,38 +60,48 @@ class GameViewController: UIViewController {
                         let state = model.selectCard(xCoord: c, yCoord: r)
                         if DEBUG {print(state)}
                         
-                        var temp = true //a temporary variable to satisfy the compiler, it does nothing
+                        var temp: Bool = true //an unused variable that is toggled when default is called in the switch statement
                         switch state {
-                        case Model.CardSelectReturnValue.firstCardSelected:
-                            //do some stuff play sound, call an animation do whatever
-                            temp = !temp
-                        
-                        case Model.CardSelectReturnValue.firstCardDeselected:
-                            //do some more stuff
-                            temp = !temp
-                        
                         case Model.CardSelectReturnValue.matchFound:
                             //do some celebratory stuff
-                            temp = !temp
                             match()
                         case Model.CardSelectReturnValue.matchNotFound:
-                            //update the health bar images to remove one, check model.getRemainingTries or model.isDead to check the models state
-                            
                             noMatch()
+                            
+                            //spawn a timer that will hide the two cards that the user selected after they are shown for a short amount of time
+                            timerCounter = 0 //the timer function will fire before as soon as the timer interval has
+                                             //elapsed so a counter keeps track of when we want the timer function to actually do things
+                            let timer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(timerFunc), userInfo: nil, repeats: true)
+                            timer.fire()
+                            if DEBUG {print("timer started")}
+   
                         default: //the card was unselectable or an error was returned by selectCard
-                            temp = !temp
-                           
+                           temp = !temp
                         }
                         updateShownCards() //update the images to show any cards that need to be shown
                     }
-                    
-                    
                 }
             }
         
         }
     }
     
+    @objc func timerFunc(timer: Timer) {
+        
+        if timerCounter > 1 {
+            timerCounter = 0
+            timer.invalidate()
+        }
+        else if timerCounter == 1 {
+            if DEBUG {print("timer event executed")}
+            model.resetMismatchedCards()
+            updateShownCards()
+            self.view.setNeedsDisplay()
+        }
+        timerCounter += 1
+    }
+    
+    //this function checks the model to see which cards need to be shown/hidden and updates the UI
     func updateShownCards() {
         let map = model.getCardMap()
         
@@ -106,12 +119,14 @@ class GameViewController: UIViewController {
               }
             }
         }
+        self.view.setNeedsDisplay()
     }
     
+    //this function is called when the user successfully matches a pair of cards
     func match() {
-        let test = model.getNumMatches()
+        let matches = model.getNumMatches()
         
-        if test == 6 {
+        if matches == 6 {
             stopGameMusic()
             performSegue(withIdentifier: "win", sender: self)
         }
@@ -128,6 +143,7 @@ class GameViewController: UIViewController {
     @IBOutlet weak var heart5: UIImageView!
     @IBOutlet weak var heart6: UIImageView!
     
+    //this function is called when the user does not successfully match a pair of cards
     func noMatch() {
         let test = model.getRemainingTries()
         if test == 0 {
@@ -208,6 +224,10 @@ class GameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    /*==========
+     Various functions to play music at certain stages of the game
+     ============*/
     
     func playGameMusic() {
         guard let url = Bundle.main.url(forResource: "GamePlaySong", withExtension: "mp3") else { return }
