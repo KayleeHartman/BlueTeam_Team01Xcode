@@ -22,6 +22,8 @@
 		746591B51F79B319008B351D /* IntroSong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 746591AF1F79B310008B351D /* IntroSong.mp3 */; };
 		746591B61F79B319008B351D /* MarioCoin.WAV in Resources */ = {isa = PBXBuildFile; fileRef = 746591AD1F79B30F008B351D /* MarioCoin.WAV */; };
 		746591B71F79B319008B351D /* VictorySong.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 746591AE1F79B30F008B351D /* VictorySong.mp3 */; };
+		74FCCC3A1F7AB21E00BCA22C /* GameOverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCCC391F7AB21E00BCA22C /* GameOverViewController.swift */; };
+		74FCCC421F7AB41F00BCA22C /* WinningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74FCCC411F7AB41F00BCA22C /* WinningViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		746591AF1F79B310008B351D /* IntroSong.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = IntroSong.mp3; sourceTree = "<group>"; };
 		746591B01F79B310008B351D /* GameOver.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = GameOver.mp3; sourceTree = "<group>"; };
 		746591B11F79B310008B351D /* HereWeGo.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = HereWeGo.mp3; sourceTree = "<group>"; };
+		74FCCC391F7AB21E00BCA22C /* GameOverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverViewController.swift; sourceTree = "<group>"; };
+		74FCCC411F7AB41F00BCA22C /* WinningViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinningViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +120,8 @@
 			children = (
 				233EE6EA1F7574B9000DD260 /* AppDelegate.swift */,
 				233EE6EE1F7574B9000DD260 /* Main.storyboard */,
+				74FCCC411F7AB41F00BCA22C /* WinningViewController.swift */,
+				74FCCC391F7AB21E00BCA22C /* GameOverViewController.swift */,
 				233EE71C1F7578C8000DD260 /* Model.swift */,
 				233EE7181F75757C000DD260 /* GameViewController.swift */,
 				233EE71A1F757593000DD260 /* StartScreenViewController.swift */,
@@ -296,9 +302,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				233EE7191F75757C000DD260 /* GameViewController.swift in Sources */,
+				74FCCC421F7AB41F00BCA22C /* WinningViewController.swift in Sources */,
 				233EE6EB1F7574B9000DD260 /* AppDelegate.swift in Sources */,
 				233EE71B1F757593000DD260 /* StartScreenViewController.swift in Sources */,
 				233EE71D1F7578C8000DD260 /* Model.swift in Sources */,
+				74FCCC3A1F7AB21E00BCA22C /* GameOverViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

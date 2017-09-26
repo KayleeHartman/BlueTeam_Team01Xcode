@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="root-background-image" translatesAutoresizingMaskIntoConstraints="NO" id="EgA-0p-8QE">
-                                <rect key="frame" x="-7" y="-2" width="427" height="738"/>
+                                <rect key="frame" x="-7" y="0.0" width="427" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WinScreenMario" translatesAutoresizingMaskIntoConstraints="NO" id="sJI-8P-dUj">
@@ -46,7 +46,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="424.63768115942031" y="123.91304347826087"/>
+            <point key="canvasLocation" x="427.536231884058" y="112.50000000000001"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="ggU-Me-SN2">
@@ -57,84 +57,84 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MatchingBackground" translatesAutoresizingMaskIntoConstraints="NO" id="K1T-Hp-n1S">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RnV-95-HJh">
-                                <rect key="frame" x="20" y="76" width="300" height="50"/>
+                                <rect key="frame" x="20" y="20" width="300" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_1_0" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="ag4-mn-CiQ">
-                                <rect key="frame" x="166" y="119" width="84" height="110"/>
+                                <rect key="frame" x="165" y="88" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_2_0" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="Fc7-25-FKY">
-                                <rect key="frame" x="268" y="119" width="84" height="110"/>
+                                <rect key="frame" x="268" y="88" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_0_1" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="b8E-2i-pMN">
-                                <rect key="frame" x="64" y="247" width="84" height="110"/>
+                                <rect key="frame" x="64" y="223" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_1_1" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="SFM-Zj-QQn">
-                                <rect key="frame" x="166" y="247" width="84" height="110"/>
+                                <rect key="frame" x="165" y="223" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_2_1" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="DVj-0c-dAL">
-                                <rect key="frame" x="268" y="247" width="84" height="110"/>
+                                <rect key="frame" x="268" y="223" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_0_2" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="bbC-Lj-Scg">
-                                <rect key="frame" x="64" y="380" width="84" height="110"/>
+                                <rect key="frame" x="64" y="360" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_1_2" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="env-pl-ZmT">
-                                <rect key="frame" x="166" y="380" width="84" height="110"/>
+                                <rect key="frame" x="165" y="360" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_2_2" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="w0F-gW-dOn">
-                                <rect key="frame" x="268" y="380" width="84" height="110"/>
+                                <rect key="frame" x="268" y="360" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_0_3" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="pPG-qQ-ArB">
-                                <rect key="frame" x="64" y="511" width="84" height="110"/>
+                                <rect key="frame" x="64" y="497" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_1_3" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="ftj-gX-OaU">
-                                <rect key="frame" x="166" y="511" width="84" height="110"/>
+                                <rect key="frame" x="165" y="497" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_2_3" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="V5T-cM-prb">
-                                <rect key="frame" x="268" y="511" width="84" height="110"/>
+                                <rect key="frame" x="268" y="497" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" restorationIdentifier="card_0_0" image="CardBack" translatesAutoresizingMaskIntoConstraints="NO" id="aQH-Lh-VY6">
-                                <rect key="frame" x="64" y="119" width="84" height="110"/>
+                                <rect key="frame" x="64" y="88" width="84" height="110"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="Zx5-ET-XrO">
-                                <rect key="frame" x="76" y="647" width="39" height="33"/>
+                                <rect key="frame" x="72" y="633" width="39" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="h0e-Pb-oYV">
-                                <rect key="frame" x="121" y="647" width="39" height="33"/>
+                                <rect key="frame" x="117" y="633" width="39" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="C7h-06-SwX">
-                                <rect key="frame" x="167" y="647" width="39" height="33"/>
+                                <rect key="frame" x="163" y="633" width="39" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-5n-CZ1">
-                                <rect key="frame" x="214" y="647" width="39" height="33"/>
+                                <rect key="frame" x="210" y="633" width="39" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="APX-Ws-dUp">
-                                <rect key="frame" x="261" y="647" width="39" height="33"/>
+                                <rect key="frame" x="257" y="633" width="39" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Heart" translatesAutoresizingMaskIntoConstraints="NO" id="ShO-ik-R9O">
-                                <rect key="frame" x="308" y="647" width="39" height="33"/>
+                                <rect key="frame" x="304" y="633" width="39" height="33"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -161,26 +161,85 @@
                         <outlet property="heart4" destination="Wfc-5n-CZ1" id="tI0-lQ-i4b"/>
                         <outlet property="heart5" destination="APX-Ws-dUp" id="asB-7W-nsb"/>
                         <outlet property="heart6" destination="ShO-ik-R9O" id="n3w-Sk-gus"/>
+                        <segue destination="4l3-eq-OjT" kind="show" identifier="loser" id="5uT-3O-vmh"/>
+                        <segue destination="2X6-y1-sdR" kind="show" identifier="win" id="Fje-5V-j3V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hxz-nP-ZOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147.8260869565217" y="126.35869565217392"/>
+            <point key="canvasLocation" x="1157.9710144927537" y="113.31521739130436"/>
         </scene>
-        <!--View Controller-->
+        <!--Winning View Controller-->
+        <scene sceneID="jJe-GF-8MW">
+            <objects>
+                <viewController id="2X6-y1-sdR" customClass="WinningViewController" customModule="T01_Blue" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lTq-s0-S1H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WinScreenBG" translatesAutoresizingMaskIntoConstraints="NO" id="85P-A3-FiF">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WinScreenMario" translatesAutoresizingMaskIntoConstraints="NO" id="MZ6-A4-f5b">
+                                <rect key="frame" x="147" y="410" width="133" height="186"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="WinScreenTitle" translatesAutoresizingMaskIntoConstraints="NO" id="fW4-eN-1Cj">
+                                <rect key="frame" x="93" y="177" width="240" height="59"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="woe-H8-fL2">
+                                <rect key="frame" x="72" y="299" width="270" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ReplayBtn"/>
+                                <connections>
+                                    <action selector="replay:" destination="2X6-y1-sdR" eventType="touchUpInside" id="eBe-9i-VIT"/>
+                                    <segue destination="BO7-fX-phQ" kind="show" id="WR9-JZ-JAO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="ML3-wm-HET"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mdk-vq-mTv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1969.5652173913045" y="499.72826086956525"/>
+        </scene>
+        <!--Game Over View Controller-->
         <scene sceneID="Xea-df-Np7">
             <objects>
-                <viewController id="4l3-eq-OjT" sceneMemberID="viewController">
+                <viewController id="4l3-eq-OjT" customClass="GameOverViewController" customModule="T01_Blue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="i37-UL-v3M">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SadMario" translatesAutoresizingMaskIntoConstraints="NO" id="c9y-WK-8qJ">
+                                <rect key="frame" x="143" y="400" width="129" height="187"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9fd-kH-BQD">
+                                <rect key="frame" x="110" y="284" width="195" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="ReplayBtn"/>
+                                <connections>
+                                    <action selector="replay:" destination="4l3-eq-OjT" eventType="touchUpInside" id="nZz-rG-Eeh"/>
+                                    <segue destination="BO7-fX-phQ" kind="show" id="zEM-bO-ffG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="GameOver" translatesAutoresizingMaskIntoConstraints="NO" id="SUP-9U-wbu">
+                                <rect key="frame" x="73" y="120" width="268" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <viewLayoutGuide key="safeArea" id="fHg-cX-GTa"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="15V-y3-oLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1909" y="129"/>
+            <point key="canvasLocation" x="1971.0144927536232" y="-260.054347826087"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="47U-9j-LGC">
@@ -198,16 +257,25 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="URD-L6-AUz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="555" y="-620"/>
+            <point key="canvasLocation" x="428" y="-625"/>
         </scene>
     </scenes>
     <resources>
         <image name="CardBack" width="84" height="110"/>
+        <image name="GameOver" width="161" height="18"/>
         <image name="Heart" width="39" height="33"/>
         <image name="MatchingBackground" width="375" height="647"/>
+        <image name="ReplayBtn" width="231" height="45"/>
+        <image name="SadMario" width="59" height="89"/>
+        <image name="WinScreenBG" width="375" height="647"/>
         <image name="WinScreenMario" width="140" height="174"/>
+        <image name="WinScreenTitle" width="251" height="57"/>
         <image name="root-background-image" width="375" height="647"/>
         <image name="root-start-btn" width="231" height="45"/>
         <image name="root-title" width="363" height="75"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KSh-wz-Bfy"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

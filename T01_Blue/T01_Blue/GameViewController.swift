@@ -12,6 +12,7 @@ import AVFoundation
 class GameViewController: UIViewController {
     
     var player: AVAudioPlayer?
+    var player1: AVAudioPlayer?
     
     let DEBUG = true
     
@@ -69,11 +70,9 @@ class GameViewController: UIViewController {
                         case Model.CardSelectReturnValue.matchFound:
                             //do some celebratory stuff
                             temp = !temp
-                            
-                           match()
+                            match()
                         case Model.CardSelectReturnValue.matchNotFound:
                             //update the health bar images to remove one, check model.getRemainingTries or model.isDead to check the models state
-                            temp = !temp
                             
                             noMatch()
                         default: //the card was unselectable or an error was returned by selectCard
@@ -113,10 +112,12 @@ class GameViewController: UIViewController {
         let test = model.getNumMatches()
         
         if test == 6 {
-            // segue
+            stopGameMusic()
+            performSegue(withIdentifier: "win", sender: self)
         }
         else {
             playMarioCoin()
+            playGameMusic()
         }
     }
     
@@ -130,12 +131,14 @@ class GameViewController: UIViewController {
     func noMatch() {
         let test = model.getRemainingTries()
         if test == 0 {
-            //segue
+            stopGameMusic()
+            performSegue(withIdentifier: "loser", sender: self)
         }
         else {
             switch test {
             case 1:
                 heart2.isHidden = true
+                
             case 2:
                 heart3.isHidden = true
             case 3:
@@ -154,11 +157,19 @@ class GameViewController: UIViewController {
             }
         }
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "loser" {
+            let controller = segue.destination as! GameOverViewController
+        }
+        else if segue.identifier == "win" {
+            let controller = segue.destination as! WinningViewController
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         playGameMusic()
         
         cards.append([])
@@ -221,13 +232,17 @@ class GameViewController: UIViewController {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
+            player1 = try AVAudioPlayer(contentsOf: url)
+            guard let player1 = player1 else { return }
             
-            player.play()
+            player1.play()
         } catch let error {
             print(error.localizedDescription)
         }
+    }
+    
+    func stopGameMusic() {
+        player?.stop()
     }
     
     /*
